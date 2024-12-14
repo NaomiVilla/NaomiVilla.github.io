@@ -1,0 +1,715 @@
+<!--<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LUXE - About</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #121212;
+            color: white;
+            overflow-x: hidden;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 30px;
+            background-color: black;
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            margin: 0 20px;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            text-transform: uppercase;
+        }
+
+        .button:hover {
+            background-color: white;
+            color: black;
+        }
+
+        .navbar .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .navbar .logo img {
+            width: 100px;
+            height: auto;
+            margin-right: 10px;
+        }
+
+        .menu-toggle {
+            position: fixed;
+            top: 17.5px;
+            right: 20px;
+            background-color: black;
+            color: white;
+            border: none;
+            padding: 10px 10px;
+            cursor: pointer;
+            font-size: 1rem;
+            text-transform: uppercase;
+            z-index: 1000;
+        }
+
+        .button:hover {
+            background-color: white;
+            color: black;
+        }
+
+        .sidebar {
+            position: fixed;
+            top: 0;
+            right: -250px;
+            width: 250px;
+            height: 100vh;
+            background-color: #1a1a1a;
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+            transition: right 0.3s ease;
+            z-index: 999;
+        }
+
+        .sidebar.open {
+            right: 0;
+        }
+
+        .sidebar a {
+            color: white;
+            text-decoration: none;
+            margin: 15px 0;
+            font-size: 1rem;
+        }
+
+        .sidebar a:hover {
+            text-decoration: underline;
+        }
+
+        .about-section {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            padding: 40px;
+            background-color: black;
+        }
+
+        .text-content {
+            flex: 1;
+            padding: 20px;
+        }
+
+        .text-content h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .text-content p {
+            font-size: 1rem;
+            margin-bottom: 10px;
+            line-height: 1.6;
+            color: rgb(155, 153, 153);
+        }
+
+        .text-content h2 {
+            color: white;
+            text-decoration: none;
+            padding: 10px 0px;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            text-transform: uppercase;
+        }
+
+        .text-content hr {
+            margin: 20px 0;
+            border: 0;
+            border-top: 1px solid white;
+        }
+
+        .image-content {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            position: relative;
+        }
+
+        .slideshow {
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .slides {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+
+        .slides img {
+            width: 100%;
+            max-width: 800px;
+            height: auto;
+        }
+
+        .slideshow-buttons {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+        }
+
+        .slideshow-buttons button {
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            font-size: 1.5rem;
+        }
+
+        @media screen and (max-width: 768px) {
+            .about-section {
+                flex-direction: column;
+                padding: 20px;
+            }
+
+            .text-content h1 {
+                font-size: 2rem;
+            }
+
+            .text-content p {
+                font-size: 0.9rem;
+            }
+
+            .slideshow {
+                max-width: 100%;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <button class="menu-toggle">☰</button>
+    <div class="sidebar">
+        <a href="home.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="membership.html">Membership</a>
+        <a href="services.html">Services</a>
+    </div>
+    <header class="navbar">
+        <div class="logo">
+            <img src="Logo.png" alt="LUXE Logo">
+        </div>
+        <a href="#" class="button">Visit a Club</a>
+    </header>
+
+    <section class="about-section">
+        <div class="text-content">
+            <h1>ABOUT LUXE</h1>
+            <h2>Small Moves. Big Changes.</h2>
+            <p>Our luxury gym redefines fitness with unparalleled amenities and personalized service. From state-of-the-art equipment to serene wellness spaces, we provide an environment where health and sophistication merge. Our team of experts is dedicated to helping you achieve your goals, ensuring an exclusive experience that caters to your unique needs.</p>
+            <hr>
+        </div>
+        <div class="image-content">
+            <div class="slideshow">
+                <div class="slides">
+                    <img src="About Us_img.webp" alt="Slide 1">
+                    <img src="about_img.webp" alt="Slide 2">
+                    <img src="about2_img.webp" alt="Slide 3">
+                </div>
+                <div class="slideshow-buttons">
+                    <button id="prev">❮</button>
+                    <button id="next">❯</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        const menuToggle = document.querySelector('.menu-toggle');
+        const sidebar = document.querySelector('.sidebar');
+
+        menuToggle.addEventListener('click', () => {
+            sidebar.classList.toggle('open');
+        });
+
+        // Close sidebar on clicking outside
+        document.addEventListener('click', (e) => {
+            if (!sidebar.contains(e.target) && !menuToggle.contains(e.target)) {
+                sidebar.classList.remove('open');
+            }
+        });
+
+        // Slideshow functionality
+        const slides = document.querySelector('.slides');
+        const slideImages = document.querySelectorAll('.slides img');
+        const prevButton = document.getElementById('prev');
+        const nextButton = document.getElementById('next');
+
+        let currentIndex = 0;
+
+        function updateSlidePosition() {
+            slides.style.transform = `translateX(-${currentIndex * 100}%)`;
+        }
+
+        prevButton.addEventListener('click', () => {
+            currentIndex = (currentIndex === 0) ? slideImages.length - 1 : currentIndex - 1;
+            updateSlidePosition();
+        });
+
+        nextButton.addEventListener('click', () => {
+            currentIndex = (currentIndex === slideImages.length - 1) ? 0 : currentIndex + 1;
+            updateSlidePosition();
+        });
+
+        // Auto-slide every 5 seconds
+        setInterval(() => {
+            currentIndex = (currentIndex === slideImages.length - 1) ? 0 : currentIndex + 1;
+            updateSlidePosition();
+        }, 5000);
+    </script>
+</body>
+</html>-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LUXE - About</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #121212;
+            color: white;
+            overflow-x: hidden;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 30px;
+            background-color: black;
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            margin: 0 20px;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            text-transform: uppercase;
+        }
+
+        .button:hover {
+            background-color: white;
+            color: black;
+        }
+
+        .navbar .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .navbar .logo img {
+            width: 100px;
+            height: auto;
+            margin-right: 10px;
+        }
+
+        .menu-toggle {
+            position: fixed;
+            top: 17.5px;
+            right: 20px;
+            background-color: black;
+            color: white;
+            border: none;
+            padding: 10px 10px;
+            cursor: pointer;
+            font-size: 1rem;
+            text-transform: uppercase;
+            z-index: 1000;
+        }
+
+        .button:hover {
+            background-color: white;
+            color: black;
+        }
+
+        .sidebar {
+            position: fixed;
+            top: 0;
+            right: -250px;
+            width: 250px;
+            height: 100vh;
+            background-color: #00000083;
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+            transition: right 0.3s ease;
+            z-index: 999;
+        }
+
+        .sidebar.open {
+            right: 0;
+        }
+
+        .sidebar a {
+            color: white;
+            text-decoration: none;
+            margin: 15px 0;
+            font-size: 1rem;
+        }
+
+        .sidebar a:hover {
+            text-decoration: underline;
+        }
+
+        .about-section {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            padding: 40px;
+            background-color: black;
+        }
+
+        .text-content {
+            flex: 1;
+            padding: 20px;
+        }
+
+        .text-content h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .text-content p {
+            font-size: 1rem;
+            margin-bottom: 10px;
+            line-height: 1.6;
+            color: rgb(185, 185, 185);
+        }
+
+        .text-content h2 {
+            color: white;
+            text-decoration: none;
+            padding: 10px 0px;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            text-transform: uppercase;
+        }
+
+        .text-content hr {
+            margin: 20px 0;
+            border: 0;
+            border-top: 1px solid white;
+        }
+
+        .image-content {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            position: relative;
+        }
+
+        .slideshow {
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .slides {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+
+        .slides img {
+            width: 100%;
+            max-width: 800px;
+            height: auto;
+        }
+
+        .slideshow-buttons {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+        }
+
+        .slideshow-buttons button {
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            font-size: 1.5rem;
+        }
+
+
+        /*Location*/
+        .location-section {
+            padding: 40px;
+            background-color: #000000;
+        }
+
+        .location {
+            display: flex;
+            flex-wrap: wrap;
+            margin-bottom: 40px;
+            align-items: center;
+        }
+
+        .location:hover {
+            background-color: rgba(255, 255, 255, 0.493);
+        }
+
+        .location-content {
+            flex: 1;
+            margin-right: 20px;
+            color: white;
+        }
+
+        .location-content h2 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .location-content p {
+            font-size: 1rem;
+            line-height: 1.6;
+            margin-bottom: 10px;
+            color: rgb(255, 255, 255);
+        }
+
+        .location-content a {
+            font-size: 1rem;
+            line-height: 1.6;
+            margin-bottom: 10px;
+            color: rgb(255, 255, 255);
+            text-decoration: underline;
+        }
+
+        .location-image {
+            flex: 1;
+            max-width: 300px;
+            overflow: hidden;
+        }
+
+        .location-image img {
+            width: 100%;
+            transition: transform 0.3s ease;
+        }
+
+        .location-image:hover img {
+            transform: scale(1.05);
+        }
+
+        @media screen and (max-width: 768px) {
+            .about-section {
+                flex-direction: column;
+                padding: 20px;
+            }
+
+            .location {
+                flex-direction: column;
+            }
+
+            .text-content h1 {
+                font-size: 2rem;
+            }
+
+            .text-content p {
+                font-size: 0.9rem;
+            }
+
+            .slideshow {
+                max-width: 100%;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <button class="menu-toggle">☰</button>
+    <div class="sidebar">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="membership.html">Membership</a>
+        <a href="services.html">Services</a>
+    </div>
+    <header class="navbar">
+        <div class="logo">
+            <img src="Logo.png" alt="LUXE Logo">
+        </div>
+        <a href="about.html" class="button">Visit a Club</a>
+    </header>
+
+    <section class="about-section">
+        <div class="text-content">
+            <h1>ABOUT LUXE</h1>
+            <h2>Small Moves. Big Changes.</h2>
+            <p>Our luxury gym redefines fitness with unparalleled amenities and personalized service. From state-of-the-art equipment to serene wellness spaces, we provide an environment where health and sophistication merge. Our team of experts is dedicated to helping you achieve your goals, ensuring an exclusive experience that caters to your unique needs.</p>
+            <hr>
+        </div>
+        <div class="image-content">
+            <div class="slideshow">
+                <div class="slides">
+                    <img src="About Us_img.webp" alt="Slide 1">
+                    <img src="about_img.webp" alt="Slide 2">
+                    <img src="about2_img.webp" alt="Slide 3">
+                </div>
+                <div class="slideshow-buttons">
+                    <button id="prev">❮</button>
+                    <button id="next">❯</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section style="text-align: center; padding: 20px 0; background-color: #000000;">
+        <h1 style="font-size: 2rem; color: white; margin-bottom: 10px;">LOCATIONS</h1>
+        <hr style="width: 50%; margin: 10px auto; border: 0; border-top: 1px solid white;">
+    </section>
+    
+    <section class="location-section">
+        <div class="location">
+            <div class="location-content">
+                <h2>Boston</h2>
+                <p>From the heart of downtown to fashionable Back Bay, our Boston clubs are designed to inspire. Each location delivers the essential elements of well-being, including innovative classes, exceptional trainers, and now the Precision Running Lab, our breakthrough standalone running studio, only at Luxe.</p>
+                <a href="https://www.google.com/maps/search/Luxury+gyms+in+Boston/@42.3735288,-71.2106478,12z/data=!3m1!4b1?entry=ttu&g_ep=EgoyMDI0MTIxMS4wIKXMDSoJLDEwMjExMjM0SAFQAw%3D%3D">View all 5 clubs  →</a>
+
+            </div>
+            <div class="location-image">
+                <img src="Location1.webp" alt="Boston Club">
+            </div>
+        </div>
+        <div class="location">
+            <div class="location-content">
+                <h2>Canada</h2>
+                <p>With two locations open in Toronto and a third in Vancouver, our portfolio of fitness clubs in Canada continues to expand and inspire. From bustling Bay Street to trendsetting Yorkville, our Toronto clubs set an unparalleled level of luxury fitness to the beat of the city's cosmopolitan pulse. Our stunning West Georgia Street club has taken Vancouver's dedication to health and wellness to new heights.</p>
+                <a href="https://www.google.com/maps/search/Luxury+gyms+in+toronto/@43.7213677,-79.5897854,11z/data=!3m1!4b1?entry=ttu&g_ep=EgoyMDI0MTIxMS4wIKXMDSoJLDEwMjExMjM0SAFQAw%3D%3D">View all 3 clubs  →</a>
+            </div>
+            <div class="location-image">
+                <img src="Location2.webp" alt="Canada Club">
+            </div>
+        </div>
+        <div class="location">
+            <div class="location-content">
+                <h2>New York</h2>
+                <p>Home to our flagship, Luxe stands out
+                    among gyms in New York City and the greater
+                    metropolitan area, boasting a stunning portfolio of 40
+                    unique locations. Each club is a reflection of its
+                    surroundings, as well as a peaceful sanctuary from the
+                    chaos outside. Featuring innovative group fitness
+                    classes, luxurious spas and exclusive boutiques, our
+                    legendary fitness clubs in New York provide members
+                    with an inviting and exhilarating fitness experience that's
+                    truly unrivaled. Find luxury fitness locations in New York
+                    near you!</p>
+                <a href="https://www.google.com/maps/search/Luxury+Gyms+In+New+York+City/@40.728039,-74.0800774,12z/data=!3m1!4b1?entry=ttu&g_ep=EgoyMDI0MTIxMS4wIKXMDSoJLDEwMjExMjM0SAFQAw%3D%3D">View all 40 clubs  →</a>
+
+            </div>
+            <div class="location-image">
+                <img src="Location3.webp" alt="Canada Club">
+            </div>
+        </div>
+        <div class="location">
+            <div class="location-content">
+                <h2>Florida</h2>
+                <p>From the pulsing energy of South Beach to the serenity
+                    of Coral Gables, discover a Miami-area fitness
+                    experience designed to pamper the body and mind. Our
+                    Florida fitness clubs offer innovative conscious
+                    movement classes, world-class personal training,
+                    luxurious spas and exclusive boutiques - creating
+                    environments that motivate and inspire.</p>
+                <a href="https://www.google.com/maps/search/Luxury+Gyms+In+Florida/@28.027932,-84.0314903,7z/data=!3m1!4b1?entry=ttu&g_ep=EgoyMDI0MTIxMS4wIKXMDSoJLDEwMjExMjM0SAFQAw%3D%3D">View all 20 clubs  →</a>
+
+            </div>
+            <div class="location-image">
+                <img src="Location4.webp" alt="Canada Club">
+            </div>
+        </div>
+    </section>
+
+    <script>
+        const menuToggle = document.querySelector('.menu-toggle');
+        const sidebar = document.querySelector('.sidebar');
+
+        menuToggle.addEventListener('click', () => {
+            sidebar.classList.toggle('open');
+        });
+
+        // Close sidebar on clicking outside
+        document.addEventListener('click', (e) => {
+            if (!sidebar.contains(e.target) && !menuToggle.contains(e.target)) {
+                sidebar.classList.remove('open');
+            }
+        });
+
+        // Slideshow functionality
+        const slides = document.querySelector('.slides');
+        const slideImages = document.querySelectorAll('.slides img');
+        const prevButton = document.getElementById('prev');
+        const nextButton = document.getElementById('next');
+
+        let currentIndex = 0;
+
+        function updateSlidePosition() {
+            slides.style.transform = `translateX(-${currentIndex * 100}%)`;
+        }
+
+        prevButton.addEventListener('click', () => {
+            currentIndex = (currentIndex === 0) ? slideImages.length - 1 : currentIndex - 1;
+            updateSlidePosition();
+        });
+
+        nextButton.addEventListener('click', () => {
+            currentIndex = (currentIndex === slideImages.length - 1) ? 0 : currentIndex + 1;
+            updateSlidePosition();
+        });
+
+        // Auto-slide every 5 seconds
+        setInterval(() => {
+            currentIndex = (currentIndex === slideImages.length - 1) ? 0 : currentIndex + 1;
+            updateSlidePosition();
+        }, 5000);
+    </script>
+</body>
+</html>

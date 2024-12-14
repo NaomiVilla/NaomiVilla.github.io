@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LUXE - Services</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: black;
+            color: white;
+            overflow-x: hidden;
+        }
+
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 30px;
+            background-color: black;
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            margin: 0 20px;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            text-transform: uppercase;
+        }
+
+        .button:hover {
+            background-color: white;
+            color: black;
+        }
+
+        .menu-toggle {
+            position: fixed;
+            top: 17.5px;
+            right: 20px;
+            background-color: black;
+            color: white;
+            border: none;
+            padding: 10px 10px;
+            cursor: pointer;
+            font-size: 1rem;
+            text-transform: uppercase;
+            z-index: 1000;
+        }
+
+
+        .sidebar {
+            position: fixed;
+            top: 0;
+            right: -250px;
+            width: 250px;
+            height: 100vh;
+            background-color: #00000083;
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+            transition: right 0.3s ease;
+            z-index: 999;
+        }
+
+        .sidebar.open {
+            right: 0;
+        }
+
+        .sidebar a {
+            color: white;
+            text-decoration: none;
+            margin: 15px 0;
+            font-size: 1rem;
+        }
+
+        .hero-section {
+            position: relative;
+            height: calc(100vh - 90px);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .hero-section video {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            object-fit: cover;
+            z-index: -1;
+        }
+
+        .hero-section h1 {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            z-index: 1;
+        }
+
+        .hero-section a {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 1.2rem;
+            background-color: white;
+            color: black;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+            z-index: 1;
+        }
+
+        .hero-section a:hover {
+            background-color: gray;
+        }
+
+        .content-offset {
+            margin-top: 120px;
+        }
+
+        /*Gym Classes*/
+        .location-section {
+            padding: 50px 20px;
+        }
+
+        .location {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 50px;
+            border-bottom: 1px solid #444;
+            padding-bottom: 20px;
+        }
+
+        .location:hover {
+            background-color: rgba(97, 96, 96, 0.329);
+        }
+
+        .location-text {
+            flex: 2;
+            margin-right: 20px;
+        }
+
+        .location-text h2 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        .location-text p {
+            font-size: 1rem;
+            line-height: 1.6;
+            margin-bottom: 10px;
+        }
+
+        .location-text a {
+            color: white;
+            text-decoration: underline;
+            font-size: 1rem;
+        }
+
+        /*This is for the Logo*/
+        .navbar .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .navbar .logo img {
+            width: 100px;
+            height: auto;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header class="navbar">
+        <div class="logo">
+            <img src="Logo.png" alt="LUXE Logo">
+        </div>
+        <a href="about.html" class="button">Visit a Club</a>
+        <button class="menu-toggle">☰</button>
+    </header>
+    <div class="sidebar">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="membership.html">Membership</a>
+        <a href="services.html">Services</a>
+    </div>
+
+    <section class="hero-section content-offset">
+        <video autoplay loop muted playsinline>
+            <source src="Classes.mp4" type="video/mp4">
+        </video>
+        <h1>WHERE STRENGTH MEETS LUXURY</h1>
+        <a href="about.html">Find A Club</a>
+    </section>
+
+    <script>
+        const menuToggle = document.querySelector('.menu-toggle');
+        const sidebar = document.querySelector('.sidebar');
+
+        menuToggle.addEventListener('click', () => {
+            sidebar.classList.toggle('open');
+        });
+
+        // Close sidebar on clicking outside
+        document.addEventListener('click', (e) => {
+            if (!sidebar.contains(e.target) && !menuToggle.contains(e.target)) {
+                sidebar.classList.remove('open');
+            }
+        });
+
+    </script>
+    <section class="location-section">
+        <div class="location">
+            <div class="location-text">
+                <h2>Pilates</h2>
+                <p>A luxurious Pilates experience combines precision, elegance, and personalized attention in a serene and sophisticated setting. Featuring state-of-the-art equipment, expert instructors, and tailored programs, this experience ensures a holistic journey toward strength, balance, and flexibility. With an emphasis on comfort and exclusivity, each session is designed to rejuvenate the mind and body while delivering unparalleled results.</p>
+                <a href="#">View all classes →</a>
+            </div>
+        </div>
+
+        <div class="location">
+            <div class="location-text">
+                <h2>Cycling</h2>
+                <p>Immerse yourself in a luxurious cycling class that redefines indoor training. With state-of-the-art bikes, dynamic lighting, and energizing playlists, each session delivers an unparalleled fitness experience. Guided by expert instructors, you'll ride through carefully curated terrains designed to boost endurance, burn calories, and invigorate your spirit—all in an ambiance of sophistication and exclusivity.</p>
+                <a href="#">View all classes →</a>
+            </div>
+        </div>
+
+        <div class="location">
+            <div class="location-text">
+                <h2>Yoga</h2>
+                <p>Step into a luxurious yoga class where tranquility meets elegance. Immerse yourself in a serene atmosphere enhanced by soft lighting, calming aromas, and spacious studios. Led by expert instructors, each session is carefully designed to harmonize your mind, body, and spirit, offering personalized guidance and techniques to elevate your practice. Experience the perfect blend of relaxation and rejuvenation in a setting that exudes sophistication.</p>
+                <a href="#">View all classes →</a>
+            </div>
+        </div>
+
+        <div class="location">
+            <div class="location-text">
+                <h2>Zumba</h2>
+                <p>Immerse yourself in a luxurious Zumba class that combines high-energy dance with a sophisticated flair. Experience an electrifying workout in an elegant setting, featuring premium sound systems, dynamic lighting, and a curated playlist of global beats. Guided by expert instructors, this vibrant session delivers both fun and fitness, leaving you energized and empowered in a truly exclusive atmosphere.</p>
+                <a href="#">View all classes →</a>
+            </div>
+        </div>
+
+        <div class="location">
+            <div class="location-text">
+                <h2>HIIT</h2>
+                <p>Elevate your fitness routine with a luxurious HIIT class that combines cutting-edge equipment, expert coaching, and an upscale environment. Experience high-intensity intervals designed to challenge your limits, burn calories, and build strength—all within a sleek, energizing studio. With personalized attention and an atmosphere of sophistication, this is the ultimate workout to unleash your full potential.</p>
+                <a href="#">View all classes →</a>
+            </div>
+        </div>
+
+        <div class="location">
+            <div class="location-text">
+                <h2>Kickboxing</h2>
+                <p>Experience the intensity of a luxurious kickboxing class, where precision meets power in a sleek and energizing environment. With top-tier instructors, cutting-edge equipment, and a dynamic soundtrack, each session is designed to boost your strength, agility, and confidence. Enjoy an exclusive atmosphere that combines fitness and sophistication for a truly transformative workout.</p>
+                <a href="#">View all classes →</a>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+    <script>
+    
+        // Scroll to Top Button
+        const scrollToTopButton = document.createElement('button');
+        scrollToTopButton.innerText = "↑";
+        scrollToTopButton.style.position = 'fixed';
+        scrollToTopButton.style.bottom = '20px';
+        scrollToTopButton.style.right = '20px';
+        scrollToTopButton.style.background = '#fff';
+        scrollToTopButton.style.color = '#000';
+        scrollToTopButton.style.border = 'none';
+        scrollToTopButton.style.padding = '10px';
+        scrollToTopButton.style.borderRadius = '50%';
+        scrollToTopButton.style.cursor = 'pointer';
+        scrollToTopButton.style.display = 'none';
+        scrollToTopButton.style.zIndex = '1000';
+        document.body.appendChild(scrollToTopButton);
+    
+        scrollToTopButton.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                scrollToTopButton.style.display = 'block';
+            } else {
+                scrollToTopButton.style.display = 'none';
+            }
+        });
+    
+        // Slideshow for Classes Section
+        const locations = document.querySelectorAll('.location');
+        let currentIndex = 0;
+    
+        function showNextLocation() {
+            locations[currentIndex].style.display = 'none'; // Hide current
+            currentIndex = (currentIndex + 1) % locations.length; // Increment index
+            locations[currentIndex].style.display = 'flex'; // Show next
+        }
+    
+        // Hide all locations except the first one
+        locations.forEach((location, index) => {
+            location.style.display = index === 0 ? 'flex' : 'none';
+        });
+    
+        // Start the slideshow
+        setInterval(showNextLocation, 5000); // Change every 5 seconds
+    </script>
+    
+</body>
+</html>
+
+

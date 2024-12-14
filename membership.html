@@ -1,0 +1,614 @@
+<!--<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LUXE - Membership</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #121212;
+            color: white;
+            overflow-x: hidden;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 30px;
+            background-color: black;
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            margin: 0 20px;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            text-transform: uppercase;
+        }
+
+        .button:hover {
+            background-color: white;
+            color: black;
+        }
+
+        .menu-toggle {
+            position: fixed;
+            top: 17.5px;
+            right: 20px;
+            background-color: black;
+            color: white;
+            border: none;
+            padding: 10px 10px;
+            cursor: pointer;
+            font-size: 1rem;
+            text-transform: uppercase;
+            z-index: 1000;
+        }
+
+        .sidebar {
+            position: fixed;
+            top: 0;
+            right: -250px;
+            width: 250px;
+            height: 100vh;
+            background-color: #00000083;
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+            transition: right 0.3s ease;
+            z-index: 999;
+        }
+
+        .sidebar.open {
+            right: 0;
+        }
+
+        .sidebar a {
+            color: white;
+            text-decoration: none;
+            margin: 15px 0;
+            font-size: 1rem;
+        }
+
+        .form-section {
+            display: flex;
+            flex-wrap: wrap;
+            height: 100vh;
+        }
+
+        .form-left {
+            flex: 1;
+            background: orange;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 40px;
+        }
+
+        .form-left h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+        }
+
+        .form-left p {
+            font-size: 1.5rem;
+        }
+
+        .form-right {
+            flex: 1;
+            background-color: #f4f4f4;
+            color: black;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 40px;
+        }
+
+        .form-right form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .form-right input, .form-right select, .form-right button {
+            padding: 10px;
+            font-size: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .form-right button {
+            background-color: black;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        .form-right button:hover {
+            background-color: orange;
+        }
+
+        .checkbox-group {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.9rem;
+        }
+
+        .terms {
+            font-size: 0.8rem;
+            color: gray;
+        }
+
+        .navbar .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .navbar .logo img {
+            width: 100px;
+            height: auto;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <button class="menu-toggle">☰</button>
+    <div class="sidebar">
+        <a href="home.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="membership.html">Membership</a>
+        <a href="services.html">Services</a>
+    </div>
+    <header class="navbar">
+        <div class="logo">
+            <img src="Logo.png" alt="LUXE Logo">
+        </div>
+        <a href="about.html" class="button">Visit a Club</a>
+    </header>
+
+    <section class="form-section">
+        <div class="form-left">
+            <h1>LUXE HOLIDAY SALE</h1>
+            <p>Join today and get $0 initiation. Offer ends soon.</p>
+        </div>
+        <div class="form-right">
+            <form>
+                <input type="text" placeholder="First Name" required>
+                <input type="text" placeholder="Last Name" required>
+                <input type="email" placeholder="Email Address" required>
+                <input type="email" placeholder="Company Email (optional)">
+                <input type="tel" placeholder="Phone Number" required>
+                <select required>
+                    <option value="">Select a club</option>
+                    <option value="club1">Club 1</option>
+                    <option value="club2">Club 2</option>
+                </select>
+                <div class="checkbox-group">
+                    <input type="checkbox" id="text-updates">
+                    <label for="text-updates">Sign up to get texts from Equinox about exclusive invites, promotions, and news.</label>
+                </div>
+                <button type="submit">Visit a Club</button>
+                <p class="terms">By continuing, you agree to the Equinox <a href="#">Terms & Conditions</a> and <a href="#">Privacy Policy</a>.</p>
+            </form>
+        </div>
+    </section>
+
+    <script>
+        const menuToggle = document.querySelector('.menu-toggle');
+        const sidebar = document.querySelector('.sidebar');
+
+        menuToggle.addEventListener('click', () => {
+            sidebar.classList.toggle('open');
+        });
+
+        // Close sidebar on clicking outside
+        document.addEventListener('click', (e) => {
+            if (!sidebar.contains(e.target) && !menuToggle.contains(e.target)) {
+                sidebar.classList.remove('open');
+            }
+        });
+    </script>
+</body>
+</html>-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LUXE - Membership</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #121212;
+            color: white;
+            overflow-x: hidden;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 30px;
+            background-color: black;
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            margin: 0 20px;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            text-transform: uppercase;
+        }
+
+        .button:hover {
+            background-color: white;
+            color: black;
+        }
+
+        .menu-toggle {
+            position: fixed;
+            top: 17.5px;
+            right: 20px;
+            background-color: black;
+            color: white;
+            border: none;
+            padding: 10px 10px;
+            cursor: pointer;
+            font-size: 1rem;
+            text-transform: uppercase;
+            z-index: 1000;
+        }
+
+        .sidebar {
+            position: fixed;
+            top: 0;
+            right: -250px;
+            width: 250px;
+            height: 100vh;
+            background-color: #00000083;
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+            transition: right 0.3s ease;
+            z-index: 999;
+        }
+
+        .sidebar.open {
+            right: 0;
+        }
+
+        .sidebar a {
+            color: white;
+            text-decoration: none;
+            margin: 15px 0;
+            font-size: 1rem;
+        }
+
+        .form-section {
+            display: flex;
+            flex-wrap: wrap;
+            height: 100vh;
+        }
+
+        .form-left {
+            flex: 1;
+            background: orange;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 40px;
+        }
+
+        .form-left h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+        }
+
+        .form-left p {
+            font-size: 1.5rem;
+        }
+
+        .form-right {
+            flex: 1;
+            background-color: #f4f4f4;
+            color: black;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 40px;
+        }
+
+        .form-right form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .form-right input, .form-right select, .form-right button {
+            padding: 10px;
+            font-size: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .form-right button {
+            background-color: black;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        .form-right button:hover {
+            background-color: orange;
+        }
+
+        .checkbox-group {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.9rem;
+        }
+
+        .terms {
+            font-size: 0.8rem;
+            color: gray;
+        }
+
+        .navbar .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .navbar .logo img {
+            width: 100px;
+            height: auto;
+            margin-right: 10px;
+        }
+
+
+        /* Thank You Page Styling */
+.thank-you-container {
+    text-align: center;
+    padding: 60px 20px;
+    color: #000;
+    font-family: 'Arial', sans-serif;
+    background-color: #fff;
+    border-radius: 10px;
+    max-width: 700px;
+    margin: 50px auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.thank-you-icon {
+    font-size: 50px;
+    color: #000;
+    margin-bottom: 20px;
+}
+
+.thank-you-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.thank-you-text {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    line-height: 1.6;
+    color: #444;
+}
+
+.thank-you-subscription {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 40px;
+}
+
+.thank-you-input {
+    padding: 10px 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    flex: 1;
+    max-width: 300px;
+}
+
+.thank-you-button {
+    padding: 10px 20px;
+    background: linear-gradient(to right, #532424, #380909);
+    border: none;
+    color: #fff;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.thank-you-button:hover {
+    background: linear-gradient(to left, #535353, #1c1f20);
+}
+
+.thank-you-footer {
+    margin-top: 20px;
+}
+
+.thank-you-footer p {
+    font-size: 1rem;
+    margin-bottom: 10px;
+    color: #777;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.social-icons i {
+    font-size: 1.5rem;
+    color: #555;
+    transition: color 0.3s;
+    cursor: pointer;
+}
+
+.social-icons i:hover {
+    color: #000;
+}
+
+
+        /* Back to Membership Button */
+.back-to-membership-button {
+    margin-top: 30px;
+    padding: 10px 20px;
+    background: #000;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s, color 0.3s;
+}
+
+.back-to-membership-button:hover {
+    background: #555;
+    color: #e6e6e6;
+}
+
+
+    </style>
+</head>
+<body>
+    <button class="menu-toggle">☰</button>
+    <div class="sidebar">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="membership.html">Membership</a>
+        <a href="services.html">Services</a>
+    </div>
+    <header class="navbar">
+        <div class="logo">
+            <img src="Logo.png" alt="LUXE Logo">
+        </div>
+        <a href="about.html" class="button">Visit a Club</a>
+    </header>
+
+    <section class="form-section">
+        <div class="form-left">
+            <h1>LUXE HOLIDAY SALE</h1>
+            <p>Join today and get $0 initiation. Offer ends soon.</p>
+        </div>
+        <div class="form-right">
+            <form>
+                <input type="text" placeholder="First Name" required>
+                <input type="text" placeholder="Last Name" required>
+                <input type="email" placeholder="Email Address" required>
+                <input type="email" placeholder="Company Email (optional)">
+                <input type="tel" placeholder="Phone Number" required>
+                <select required>
+                    <option value="">Select a club</option>
+                    <option value="club1">Boston</option>
+                    <option value="club2">Canada</option>
+                    <option value="club2">New York</option>
+                    <option value="club2">Florida</option>
+
+                </select>
+                <div class="checkbox-group">
+                    <input type="checkbox" id="text-updates">
+                    <label for="text-updates">Sign up to get texts from LUXE about exclusive invites, promotions, and news.</label>
+                </div>
+                <button type="submit">Visit a Club</button>
+                <p class="terms">By continuing, you agree to the LUXE <a href="#">Terms & Conditions</a> and <a href="#">Privacy Policy</a>.</p>
+            </form>
+        </div>
+    </section>
+
+    <script>
+        const menuToggle = document.querySelector('.menu-toggle');
+        const sidebar = document.querySelector('.sidebar');
+
+        menuToggle.addEventListener('click', () => {
+            sidebar.classList.toggle('open');
+        });
+
+        // Close sidebar on clicking outside
+        document.addEventListener('click', (e) => {
+            if (!sidebar.contains(e.target) && !menuToggle.contains(e.target)) {
+                sidebar.classList.remove('open');
+            }
+        });
+    </script>
+    
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const form = document.querySelector('form'); // Select the form
+            const formSection = document.querySelector('.form-section'); // Section to replace with thank-you content
+    
+            form.addEventListener('submit', (event) => {
+                event.preventDefault(); // Prevent page reload
+    
+                // Replace form with the thank-you content
+                formSection.innerHTML = `
+                    <div class="thank-you-container">
+                        <div class="thank-you-icon">
+                            <i class="fas fa-shopping-bag"></i>
+                        </div>
+                        <h1 class="thank-you-title">Thank you!</h1>
+                        <p class="thank-you-text">
+                            A confirmation has been sent to your email.<br>
+                            Since you're here, join our list for discounts!
+                        </p>
+                        <div class="thank-you-subscription">
+                            <input type="email" class="thank-you-input" placeholder="Email Address" />
+                            <button class="thank-you-button">Yes, Sign Me Up!</button>
+                        </div>
+                        <div class="thank-you-footer">
+                            <p>Let's Be Friends!</p>
+                            <div class="social-icons">
+                                <i class="fab fa-facebook"></i>
+                                <i class="fab fa-twitter"></i>
+                                <i class="fab fa-instagram"></i>
+                                <i class="fab fa-snapchat"></i>
+                            </div>
+                        </div>
+                        <button class="back-to-membership-button" onclick="location.reload();">Back to Membership</button>
+                    </div>
+                `;
+            });
+        });
+    </script>    
+    </script>
+    
+</body>
+</html>
+
